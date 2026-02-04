@@ -47,7 +47,7 @@ WHERE YEAR(order_date) IN (2011, 2012)
   AND order_status = 'Order Finished'
 GROUP BY 1, 2
 ORDER BY 1, 3 DESC;
-
+```
 
 📈 Query Output
 
