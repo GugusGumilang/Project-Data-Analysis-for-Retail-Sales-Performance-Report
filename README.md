@@ -19,7 +19,7 @@ This project aims to evaluate the business performance of **DQLab Store** over a
 ## 📂 Repository Structure
 ```bash
 ├── sql-scripts/
-│   └── mysql_query.sql   # Main SQL Queries (A1-3A)
+│   └── mysql_query.sql            # Main SQL Queries (A1-3A)
 ├── assets/
 │   └── output_previews/           # Screenshots of Query Results
 └── README.md                      # Project Documentation
