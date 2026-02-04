@@ -52,7 +52,8 @@ ORDER BY 1, 3 DESC;
 ### 📈 Query Output
 
 ![Sub-Category Output](./assets/output_previews/1A.jpeg)
-*The table above displays rows of sales performance data by product sub-category for 2011–2012.
+
+*The table above displays rows of sales performance data by product sub-category for 2011–2012.*
 
 💡 Key Business Insights
 
