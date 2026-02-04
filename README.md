@@ -24,6 +24,7 @@ This project aims to evaluate the business performance of **DQLab Store** over a
 │   └── output_previews/           # Screenshots of Query Results
 └── README.md                      # Project Documentation
 
+```
 ## 🔍 Deep Dive: Technical Implementation & Insights
 
 📊 1. DQLab Store Overall Performance
