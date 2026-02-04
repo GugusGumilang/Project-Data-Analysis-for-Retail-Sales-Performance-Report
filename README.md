@@ -195,9 +195,9 @@ ORDER BY sales DESC;
 
 ### 📈 Query Output
 
-The table above presents total sales, promotion value, and burn rate percentage by product sub-category and category for 2012.
-
 ![Sub-Category Output](./assets/output_previews/2B.jpeg)
+
+*The table above presents total sales, promotion value, and burn rate percentage by product sub-category and category for 2012.*
 
 💡 Key Business Insights
 
@@ -218,3 +218,53 @@ Low-value items such as Rubber Bands (3.06%) and Envelopes (3.98%) demonstrate s
 Promotion effectiveness varies significantly across product segments.
 While some high-revenue categories rely heavily on discounts to drive sales, others achieve strong performance with controlled promotional spending, presenting opportunities to reallocate promotion budgets toward more efficient product segments.
 
+---
+
+## 👥 3. Customer Analytics  
+
+Following the lack of significant growth in overall performance, this section shifts the analysis toward the **customer dimension** to understand whether revenue changes are driven by **customer growth** or **changes in customer spending behavior**.
+
+---
+
+### 🅐 Customer Transactions per Year  
+
+This analysis examines the **number of unique customers** who completed transactions each year between **2009 and 2012**.  
+Only **completed orders** are included to ensure accuracy in customer activity measurement.
+
+### 🧩 SQL Query
+```sql
+SELECT
+    YEAR(order_date) AS years,
+    COUNT(DISTINCT customer) AS number_of_customer
+FROM dqlab_sales_store
+WHERE YEAR(order_date) BETWEEN 2009 AND 2012
+  AND order_status = 'Order Finished'
+GROUP BY years;
+```
+### 📈 Query Output
+
+![Sub-Category Output](./assets/output_previews/3A.jpeg)
+
+*The table above presents the yearly count of unique customers based on completed orders from 2009 to 2012.*
+
+💡 Key Business Insights
+
+🧊 Stagnant Customer Growth
+The number of unique customers remained largely stagnant over the four-year period, fluctuating within a narrow range of 581 to 594 customers.
+
+📉 Lowest Point in 2011
+2011 recorded the lowest customer count at 581 unique customers, aligning with the weak overall sales performance observed during the same year.
+
+📈 Marginal Recovery in 2012
+In 2012, the customer count increased slightly to 594 users, representing a modest recovery from the previous year.
+
+⚠️ Revenue Growth Not Driven by New Customers
+Despite higher sales in 2012, customer growth was limited to approximately 2.2% year-over-year, indicating that revenue improvement was primarily driven by increased spending per existing customer, rather than successful new user acquisition.
+
+🚨 Market Saturation Risk
+The lack of meaningful customer base expansion suggests that market penetration may have plateaued, with current sales relying heavily on a recurring customer group.
+
+### 🧠 Analytical Takeaway
+
+DQLab Store’s recent sales growth is not supported by customer acquisition.
+To achieve sustainable long-term growth, the business may need to prioritize customer acquisition strategies, expand market reach, or diversify its customer segments beyond the existing user base.
