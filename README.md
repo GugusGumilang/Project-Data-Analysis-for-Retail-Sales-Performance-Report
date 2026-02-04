@@ -77,3 +77,46 @@ One of the fastest-growing categories, with sales increasing by approximately 75
 
 ⚠️ Low-Revenue Categories
 Several smaller categories exhibit high volatility, indicating unstable demand and limited strategic impact on overall revenue.
+
+
+### 🅑 Overall Performance by Year  
+
+This section evaluates **DQLab Store’s overall business performance by year** from **2009 to 2012**, focusing on total revenue and order volume.  
+Only **completed orders** are included to ensure that the analysis reflects actual realized sales performance.
+
+---
+
+### 🧩 SQL Query
+```sql
+SELECT
+    YEAR(order_date) AS years,
+    SUM(sales) AS sales,
+    COUNT(order_id) AS number_of_order
+FROM dqlab_sales_store
+WHERE YEAR(order_date) BETWEEN 2009 AND 2012
+  AND order_status = 'Order Finished'
+GROUP BY 1
+ORDER BY 1;
+```
+### 📈 Query Output
+
+![Sub-Category Output](./assets/output_previews/1B.jpeg)
+
+*The table presents aggregated sales data, including total sales and order counts, grouped by year from 2009 to 2012.*
+
+💡 Key Business Insights
+
+📉 Peak Performance in 2009
+Overall sales reached their highest point in 2009, totaling approximately 5.25 billion, establishing this year as the performance benchmark.
+
+🔻 Sales Decline in 2010
+Total sales dropped by around 13.6% in 2010, indicating a significant slowdown following the 2009 peak.
+
+🧊 Weak Demand in 2011
+The number of orders fell to its lowest level in 2011 (1,318 orders), aligning with stagnant sales performance and suggesting reduced customer activity.
+
+📈 Recovery Trend in 2012
+In 2012, sales rebounded by approximately 11%, while order volume increased to 1,392 orders, approaching 2009 levels.
+
+⚠️ Efficiency Has Not Fully Recovered
+Despite the recovery in total sales and order count, the average sales value per order in 2012 remains below the efficiency levels achieved in 2009.
