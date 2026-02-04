@@ -120,3 +120,54 @@ In 2012, sales rebounded by approximately 11%, while order volume increased to 1
 
 ⚠️ Efficiency Has Not Fully Recovered
 Despite the recovery in total sales and order count, the average sales value per order in 2012 remains below the efficiency levels achieved in 2009.
+
+## 📊 2. DQLab Store Promotion Effectiveness and Efficiency  
+
+Following the evaluation of DQLab Store’s overall performance, this section analyzes the **relationship between sales performance and prior promotional activities**, focusing on promotion efficiency using the **burn rate metric**.
+
+---
+
+### 🅐 Promotion Effectiveness and Efficiency by Year  
+
+This analysis evaluates how efficiently promotional spending translates into revenue on a **yearly basis**.  
+The key metric used is **Burn Rate Percentage**, defined as the proportion of total promotional value relative to total sales.
+
+DQLab Store sets a maximum acceptable burn rate of **4.5%** as a benchmark for healthy promotional efficiency.
+
+---
+
+### 🧩 SQL Query
+```sql
+SELECT 
+    YEAR(order_date) AS years,
+    product_sub_category,
+    SUM(sales) AS sales
+FROM dqlab_sales_store
+WHERE YEAR(order_date) IN (2011, 2012)
+  AND order_status = 'Order Finished'
+GROUP BY 1, 2
+ORDER BY 1, 3 DESC;
+```
+### 📈 Query Output
+
+![Sub-Category Output](./assets/output_previews/2A.jpeg)
+
+💡 Key Business Insights
+
+🚨 Burn Rate Above Threshold Across All Years
+The burn rate percentage consistently exceeded the 4.5% maximum threshold set by the store, indicating that promotional spending has been inefficient throughout the analyzed period.
+
+🔥 Lowest Promotional Efficiency in 2011
+Promotional efficiency reached its weakest point in 2011, with the burn rate peaking at 5.22%, despite sales not being the highest during that year.
+
+📈 Sales Growth Still Promotion-Driven in 2012
+Although sales increased to approximately 4.48 billion in 2012, the burn rate remained elevated at 5.04%, suggesting that revenue growth is still heavily dependent on costly promotional activities.
+
+⚠️ Rising Promotion Value Without Efficiency Gains
+Promotional spending has steadily increased since 2010, yet it has failed to bring the burn rate back within the healthy 4.5% limit, highlighting diminishing returns on promotion investments.
+
+### 🧠 Analytical Takeaway
+
+DQLab Store’s promotional strategy has successfully driven sales growth, but at the cost of declining efficiency.
+Sustained burn rates above the acceptable threshold indicate a need to re-evaluate promotion targeting, discount depth, and campaign effectiveness to achieve more sustainable growth.
+
